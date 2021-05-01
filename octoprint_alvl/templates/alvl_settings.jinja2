@@ -1,0 +1,44 @@
+<h3>{{ _('A-lvl Settings') }}</h3>
+<div>
+    <p>Here you can change the command issued to your printer when you press the "Auto Level" button.</p>
+    <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label">Auto Level Command</label>
+            <div class="controls">
+                <input type="text" class="input-block" data-bind="value: settings.plugins.alvl.alvlCommand">
+                <span class="help-block">Usually this is G135. Only change if you know what you're doing.</span>
+            </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">{{ _('Maximum Cycles') }}</label>
+            <div class="controls">
+                <input type="text" class="input-block" data-bind="value: settings.plugins.alvl.alvlNBCycle">
+                <span class="help-block">Maximum number of cycle to calibrate in the range.</span>
+            </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">{{ _('Range of calibration') }}</label>
+            <div class="controls">
+                <input type="text" class="input-block" data-bind="value: settings.plugins.alvl.alvlMaxDiff">
+                <span class="help-block">Maximum range of data acceptable, if more, do another cycle.</span>
+            </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">{{ _('Bed Radius') }}</label>
+            <div class="controls">
+                <input type="text" class="input-block" data-bind="value: settings.plugins.alvl.alvlBedRadius">
+                <span class="help-block">Radius to probe</span>
+            </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">{{ _('Factors') }}</label>
+            <div class="controls">
+                <label><input type="radio" class="input-block" value="3" data-bind="checked: settings.plugins.alvl.alvlNF">endstop corrections only</label>
+                <label><input type="radio" class="input-block" value="4" data-bind="checked: settings.plugins.alvl.alvlNF">endstop corrections and delta radius</label>
+                <label><input type="radio" class="input-block" value="6" data-bind="checked: settings.plugins.alvl.alvlNF">endstop corrections, delta radius, and two tower angular position corrections</label>
+                <label><input type="radio" class="input-block" value="7" data-bind="checked: settings.plugins.alvl.alvlNF">endstop corrections, delta radius, two tower angular position corrections, and diagonal rod length</label>
+            </div>
+        </div>
+
+    </form>
+</div>
